@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://static.freshdev.io/fdk/2.0/assets/freshchat.css">
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./assets/iparams.css">
+    <title>Document</title>
+
+    <script>
+
+
+        //  declaration of html elements as variables
+        var key;
+        var domain;
+        var name;
+        var password;
+        var myDiv;
+        var p1;
+        var p2;
+        var us;
+
+        
+
+        // login page validation
+        function validateForm() {
+            domain = document.getElementById("domain").value;
+            name = document.getElementById("name").value;
+            password = document.getElementById("password").value;
+            myDiv = document.getElementById("myDIV");
+            p1 = document.getElementById("p_1");
+            p2 = document.getElementById("p_2");
+            us = document.getElementById("us");
+
+            if (domain === "hi" && name === "hi" && password === "hi") {
+
+                alert("hi");
+                myDiv.style.display = "block";
+                p1.style.display = "none";
+                p2.style.display = "block";
+
+            }
+            else {
+                us.style.display = "block"
+                alert(name)
+                document.getElementById('name').value = ''
+                document.getElementById('password').value = ''
+                document.getElementById('domain').value = ''
+            }
+
+        }
+
+        // key page validation
+
+        function validateKey() {
+            key = document.getElementById("key").value
+            if (key === "hi") {
+                alert("b")
+
+            }
+        }
+
+
+        function validate() {
+            if (name && password && domain && key) {
+                return true;
+                console.log("pass")
+            }
+            return false;
+        }
+
+
+        function postConfigs() {
+
+            return {
+                __meta: {
+                    secure: [key, password]
+                },
+                name,
+                password,
+                domain,
+                key
+            }
+        }
+        function getConfigs(configs) {
+            console.log(configs);
+        }
+
+
+    </script>
+   
+</head>
+
+<body>
+    <h2>Welcome To Fresh Chat App</h2>
+    <p id="myDIV">
+        Login Successful
+    </p>
+
+    <!-- Personal Detail form to be displayed first -->
+    <form id="p_1">
+        <label for="domain">Domain:</label>
+        <input type="text" id="domain" name="domain" placeholder="Your Domain"><br><br><br>
+
+        <label for="name"> Username:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name"><br><br><br>
+        <label for="password"> Password:</label>
+
+        <input type="password" id="password" name="pass" placeholder="Your Password"><br><br><br><br>
+        <span id="us"><b>Login Unsuccessful.!</b> </span>
+        <button type="submit" form="form1" value="Submit" onclick="validateForm()">Submit</button>
+
+    </form>
+    <!-- Licence Key form to be displayed second -->
+
+    <form id="p_2">
+        <label for="key"> Key:</label>
+
+        <input type="text" id="key" name="key" value="hi"><br><br>
+
+        <button type="submit" form="form2" value="Submit" onclick="validateKey()">Submit</button>
+    </form>
+
+</body>
+
+</html>

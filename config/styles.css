@@ -1,0 +1,31 @@
+
+#myDIV {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    /* background-color: lightblue; */
+    margin-top: 20px;
+    display: none;
+    color: red;
+}
+
+#us {
+    display: none;
+    color: red;
+}
+
+#p_2 {
+    /* visibility: hidden; */
+    display: none;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
